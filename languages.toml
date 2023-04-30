@@ -1,0 +1,64 @@
+[[language]]
+name = "rust"
+scope = "source.rust"
+injection-regex = "rust"
+file-types = ["rs"]
+roots = ["Cargo.toml", "Cargo.lock"]
+auto-format = true
+comment-token = "//"
+
+language-server = { command = "rust-analyzer" }
+indent = { tab-width = 4, unit = "    " }
+
+[language.auto-pairs]
+'(' = ")"
+'{' = '}'
+'[' = ']'
+'"' = '"'
+'`' = '`'
+
+[language.config]
+inlayHints.bindingModeHints.enable = true
+inlayHints.closingBraceHints.minLines = 10
+inlayHints.closureReturnTypeHints.enable = "with_block"
+inlayHints.discriminantHints.enable = "fieldless"
+inlayHints.lifetimeElisionHints.enable = "skip_trivial"
+inlayHints.typeHints.hideClosureInitialization = false
+inlayHints.typeHints.hideNamedConstructor = true
+inlayHints.typeHints.chainingHints.enable = true
+inlayHints.typeHints.maxLength = 20
+semanticHighlighting.punctuation.enable = true
+semanticHighlighting.operator.specialization.enable = true
+typing.autoClosingAngleBrackets.enable = true
+check.command = "clippy"
+rustfmt.extraArgs = []
+
+[[language]]
+name = "typescript"
+scope = "source.ts"
+injection-regex = "typescript"
+file-types = ["ts", "tsx", "deno"]
+roots = ["package.json", "tsconfig.json", "jsconfig.json", "deno.json"]
+auto-format = true
+comment-token = "//"
+language-server = { command = "deno", args = ["lsp"] }
+[languge.config]
+name = "javascript"
+scope = "source.js"
+injection-regex = "javascript"
+file-types = ["js", "jsx", "mjs", "cjs"]
+roots = ["package.json", "jsconfig.json"]
+auto-format = true
+comment-token = "//"
+[language.config]
+inlayHints.parameterHints.enable = false
+
+[[language]]
+name = "clojure"
+scope = "source.clojure"
+injection-regex = "clojure"
+file-types = ["clj", "cljs", "cljc", "aria"]
+roots = ["deps.edn", "shadow-cljs.edn", "build.aria"]
+auto-format = true
+comment-token = ";"
+
