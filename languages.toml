@@ -42,6 +42,7 @@ roots = ["package.json", "tsconfig.json", "jsconfig.json", "deno.json"]
 auto-format = true
 comment-token = "//"
 language-server = { command = "deno", args = ["lsp"] }
+
 [languge.config]
 name = "javascript"
 scope = "source.js"
@@ -61,4 +62,29 @@ file-types = ["clj", "cljs", "cljc", "aria"]
 roots = ["deps.edn", "shadow-cljs.edn", "build.aria"]
 auto-format = true
 comment-token = ";"
+
+[[language]]
+name = "elixir"
+scope = "source.elixir"
+injection-regex = "elixir"
+file-types = ["elx", "pine", "tsl"]
+roots = ["main.pine", "pine-build.json"]
+auto-format = false
+comment-token = "#"
+
+[[language]]
+name = "ejs"
+scope = "source.ejs"
+injection-regex = "ejs"
+file-types = ["ejs"]
+roots = []
+auto-format = true
+comment-token = "<%#"
+language-server = { command = "ejs-language-server" }
+[language.auto-pairs]
+'<' = ">"
+'[' = "]"
+'{' = "}"
+'"' = '"'
+"'" = "'"
 
