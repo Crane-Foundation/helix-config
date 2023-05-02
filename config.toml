@@ -34,9 +34,9 @@ hidden = false
 left = ["mode", "spinner", "file-name"]
 right = ["file-type", "diagnostics", "selections", "position"]
 separator = "│"
-mode.normal = "󰶺  󰶻"
-mode.insert = "󰶺  󰶻"
-mode.select = "󰶺 󱉶 󰶻"
+mode.normal = "[NOR]"
+mode.insert = "[INS]"
+mode.select = "[SEL]"
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
